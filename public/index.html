@@ -1,26 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  
+  <title>Jeu Grattage</title>
 
-  <head>
-    <title>NodeJS Starter Application</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
-  </head>
+  <!-- filestart -->
+  <link rel="icon" type="image/vnd.microsoft.icon"  href="https://www.ibm.com/favicon.ico" />
+  <link rel="Stylesheet" type="text/css" href="./demo/demo.css" />
+  <script type="text/javascript" src="./lib/jquery.1.11.0.min.js"></script>
+  <!-- fileend -->
+</head>
+<body>
+  <div id="content">
+      <div class="content-box">
+         <h1>Grattez ce ticket </h1><p>
+         <h1>pour découvrir </h1><p>
+        <h1>votre promotion</h1><p>
+         <h2>à présenter en caisse</h2>
+      <div id="demo1" class="scratchpad"></div>
+      <style>
+        .scratchpad{
+          width: 50%;
+          height: 100px;
+          border: 1px solid;
+        }
 
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        </td>
-        <td>
-          <h1 id="message">Hello World!</h1>
-          <p class='description'></p> Thanks for creating a <span class = "blue">NodeJS Starter Application</span>.
-        </td>
-      </tr>
-    </table>
-  </body>
+        @media (max-width: 500px) {
+          .scratchpad {
+            width: 65%;
+          }
 
+        }
+      </style>
+
+      <script type="text/javascript" src="./wScratchPad.min.js"></script>
+      <script type="text/javascript">
+        $('#demo1').wScratchPad({
+          bg: './images/images.png',
+          fg          : '#cacaca',
+          size        : 20, 
+          'cursor': 'url("./cursors/coin.png") 5 5, default',
+          scratchMove: function (e, percent) {
+            $('#demo2-percent').html(percent);
+            if (percent > 75) {
+              this.clear();
+            }
+          }
+        });
+
+      </script>
+      
+    </div>
+  </div>
+
+</body>
 </html>

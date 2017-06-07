@@ -2,7 +2,7 @@ applications:
 - path: .
   memory: 256M
   instances: 1
-  domain: mybluemix.net
-  name: barcode-vp
-  host: barcode-vp
+  domain: eu-gb.mybluemix.net
+  name: grattage
+  host: grattage
   disk_quota: 1024M
