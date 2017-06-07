@@ -1,15 +1,19 @@
-# Node.js Starter Overview
+# Scratch a SMS Prototype
 
-The Node.js Starter demonstrates a simple, reusable Node.js web application based on the Express framework.
+A prototype illustrating how to scratch a SMS
 
-## Run the app locally
+## Run the app on Bluemix
 
-1. [Install Node.js][]
-2. Download and extract the starter code from the Bluemix UI
-3. cd into the app directory
-4. Run `npm install` to install the app's dependencies
-5. Run `npm start` to start the app
-6. Access the running app in a browser at http://localhost:6001
-
-[Install Node.js]: https://nodejs.org/en/download/
-"# barcode-vp" 
+1. Create a Node.js app on Bluemix
+2. Clone the app
+3. Modify manifest.yml, especially elements in bold
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: grattage
+  host: grattage
+  disk_quota: 1024M
+4. Modify index.html in public folder based on you wish
+5. Deploy via cf push [app_name] command
